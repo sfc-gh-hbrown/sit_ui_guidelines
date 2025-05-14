@@ -1,7 +1,9 @@
 import streamlit as st
+from style.style import sit_style
 
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
 
-st.set_page_config(layout="wide")
+st.html(sit_style)
 
 st.html("""
 <style>
@@ -53,7 +55,6 @@ st.html("""
 </style>
 	""")
 
-st.title("SIT Design System")
 
 st.header("Colors")
 
@@ -103,25 +104,25 @@ st.html("""
 			<span>248AC5</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#1B78AE;">
+	<div class="grad_box" style="background-color:#1B78AE;color:white;">
 		<span>
 			<span>70</span>
 			<span>1B78AE</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#166898;">
+	<div class="grad_box" style="background-color:#166898;color:white;">
 		<span>
 			<span>80</span>
 			<span>166898</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#11567F;">
+	<div class="grad_box" style="background-color:#11567F;color:white;">
 		<span>
 			<span>90</span>
 			<span>11567F</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#0A466A;">
+	<div class="grad_box" style="background-color:#0A466A;color:white;">
 		<span>
 			<span>100</span>
 			<span>0A466A</span>
@@ -223,7 +224,7 @@ st.write("**Red**: Destruction Actions Color")
 
 st.html("""
 <div class="row">
-  <span>#11567F </span>
+  <span>#FF2A2B </span>
   <div class='box' style="background-color:#FF2A2B;"></div>
 </div>""")
 
@@ -265,25 +266,25 @@ st.html("""
 			<span>FF4B4B</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#FF4B4B;">
+	<div class="grad_box" style="background-color:#FF4B4B;color:white;">
 		<span>
 			<span>70</span>
 			<span>FF4B4B</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#FF2A2B;">
+	<div class="grad_box" style="background-color:#FF2A2B;color:white;">
 		<span>
 			<span>80</span>
 			<span>FF2A2B</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#BD4043;">
+	<div class="grad_box" style="background-color:#BD4043;color:white;">
 		<span>
 			<span>90</span>
 			<span>BD4043</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#7D353B;">
+	<div class="grad_box" style="background-color:#7D353B;color:white;">
 		<span>
 			<span>100</span>
 			<span>7D353B</span>
@@ -346,25 +347,25 @@ st.html("""
 			<span>A3A8B8</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#808495;">
+	<div class="grad_box" style="background-color:#808495;color:white;">
 		<span>
 			<span>70</span>
 			<span>808495</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#555867;">
+	<div class="grad_box" style="background-color:#555867;color:white;">
 		<span>
 			<span>80</span>
 			<span>555867</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#262730;">
+	<div class="grad_box" style="background-color:#262730;color:white;">
 		<span>
 			<span>90</span>
 			<span>262730</span>
 		</span>
 	</div>
-	<div class="grad_box" style="background-color:#0E1117;">
+	<div class="grad_box" style="background-color:#0E1117;color:white;">
 		<span>
 			<span>100</span>
 			<span>0E1117</span>

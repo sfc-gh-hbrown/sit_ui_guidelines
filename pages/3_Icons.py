@@ -1,7 +1,11 @@
 import streamlit as st
 import base64
 
-st.set_page_config(layout="wide")
+from style.style import sit_style
+
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
+
+st.html(sit_style)
 
 def get_image(path):
 	file_ = open(path, "rb")
@@ -81,10 +85,30 @@ st.html("""
 	background-color:transparent;
 }
 
+	[class *= "secondary-button"] button{
+			color: #11567F;
+			border-color: #11567F;
+		}
+
+	[class *= "secondary-button"]:hover button{
+			color: #02263B;
+			border-color: #02263B;
+		}
+
+	[class *= "secondary-button"]:active button{
+			color: #1B78AE;
+			border-color: #1B78AE;
+			background-color:transparent;
+		}
+	[class *= "secondary-button"] :focus:not(:active) {
+			color: #1B78AE;
+			border-color: #1B78AE;
+			background-color:transparent;
+		}
+
 </style>
 	""")
 
-st.title("SIT Design System")
 st.header("Icons")
 
 st.write("**Material Icons:** Open source icon library created by Google. Use one single icon style when adding icons to your interface. Pick the outline or solid icon style but avoid mixing them.")
@@ -121,7 +145,7 @@ st.html("""<link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
 st.write("**Example**")
 text, ex, __ = st.columns((2,3,20))
 text.html("""<p style="padding-top:7px">Button</p>""")
-ex.button(":material/power_settings_new: Click Me")
+ex.button(":material/power_settings_new: Click Me",key = "secondary-button_click_me_icon")
 text, ex, __ = st.columns((2,3,20))
 text.html("""<p style="padding-top:0px">Page</p>""")
 ex.write(":material/Timelapse: Page one")

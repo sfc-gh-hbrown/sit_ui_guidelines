@@ -1,7 +1,11 @@
 import streamlit as st
 
 
-st.set_page_config(layout="wide")
+from style.style import sit_style
+
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
+
+st.html(sit_style)
 
 st.html("""
 <style>
@@ -19,7 +23,6 @@ st.html("""
 </style>
 	""")
 
-st.title("SIT Design System")
 
 st.header("Selections")
 
@@ -69,7 +72,7 @@ st.html(css)
 
 
 with st.container(key="styled_tabs"):
-	tab1, tab2, tab3, tab4, tab5 = st.tabs(["Checkbox", "Radio Button", "Toggle","Select Box","Multi-Select Box"])
+	tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["Checkbox", "Radio Button", "Toggle","Select Box","Multi-Select Box","Pills","Segmented Controls"])
 
 	with tab1:
 		st.write("**Checkbox:** For choosing one or more options from a list. When used alone, users can make a binary choice(checked or unchecked). When used in a group, users can choose multiple options from a list.")
@@ -107,7 +110,7 @@ with st.container(key="styled_tabs"):
 					background-color: #EAEBEC;
 				}
 
-				.st-key-check_3 :has(input[aria-checked="true"]) span{
+				.stCheckbox :has(input[aria-checked="true"]) span{
 					background-color: #11567F !important;
 					border-color: #11567F !important;
 				}
@@ -250,8 +253,7 @@ with st.container(key="styled_tabs"):
 				.st-key-agree_2 label > div:first-child{
 					background-color: #EAEBEC !important;
 				}
-
-				.st-key-agree_3 label:has(input[aria-checked="true"]) > div:first-child{
+				.stCheckbox label:has(input[aria-checked="true"]) > div:first-child{
 					background-color: #11567F !important;
 				}
 
@@ -288,7 +290,7 @@ with st.container(key="styled_tabs"):
 				''')
 
 	with tab4:
-		st.write("**Select Box:** For choosingf one option from a list in a compact space")
+		st.write("**Select Box:** For choosing one option from a list in a compact space")
 
 		state,button,__ = st.columns((2,2,10))
 
@@ -386,7 +388,7 @@ with st.container(key="styled_tabs"):
 		</style>""")
 				''')
 		with tab5:
-			st.write("**Milti Select Box:** For choosingf one or more options from a list in a compact space")
+			st.write("**Multi Select Box:** For choosing one or more options from a list in a compact space")
 
 			state,button,__ = st.columns((2,2,10))
 
@@ -513,3 +515,185 @@ with st.container(key="styled_tabs"):
 
 			</style>""")
 						''')
+		with tab6:
+			st.write("**Pills:** For choosing or displaying compact options like tags, filters, or statuses.")
+
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("**State**")
+			with button:
+				st.write("**Component**")
+
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("Resting")
+			with button:
+				st.button("Click Me", key="m_b_1",disabled=True)
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("Hover")
+			with button:
+				st.button("Click Me", key="m_b_2",disabled=True)
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("Clicked")
+			with button:
+				st.button("Click Me", key="m_b_3",disabled=True)
+
+
+
+			st.html("""<style>
+			.st-key-m_b_1 button{
+				color: black !important;
+				border-radius: 20px;
+				# background-color: #11567F !important;
+				# border-color: #11567F !important;
+			}
+			.st-key-m_b_2 button{
+				color: #11567F !important;
+				border-color: #11567F !important;
+				border-radius: 20px;
+				# background-color: #11567F !important;
+				# border-color: #11567F !important;
+			}
+			.st-key-m_b_3 button{
+				background-color: #D4EFFF !important;
+				color: #11567F !important;
+				border-color: #11567F !important;
+				border-radius: 20px;
+				# background-color: #11567F !important;
+				# border-color: #11567F !important;
+			}
+			</style>""")
+
+			st.write("**Example**")
+
+			st.pills("Example",["Comedy","Action","Thriller","Drama"],selection_mode="multi", default=["Action","Drama"], key="pill_example")
+
+			st.html("""
+				<style>
+				.st-key-pill_example button:hover {
+					color: #11567F;
+					border-color: #11567F;
+				}
+				.st-key-pill_example button[kind*="Active"]{
+					background-color: #D4EFFF;
+					color: #11567F;
+					border-color: #11567F;
+				}
+				</style>
+				""")
+
+			with st.popover("Copy code"):
+				st.code('''
+					st.pills("Example",["Comedy","Action","Thriller","Drama"],selection_mode="multi", default=["Action","Drama"], key="pill_example")
+
+					st.html("""
+						<style>
+						.st-key-pill_example button:hover {
+							color: #11567F;
+							border-color: #11567F;
+						}
+						.st-key-pill_example button[kind*="Active"]{
+							background-color: #D4EFFF;
+							color: #11567F;
+							border-color: #11567F;
+						}
+						</style>
+						""")
+					''')
+		with tab7:
+			st.write("**Segmented Controls:** For toggling between a small number of mutually exclusive options.")
+
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("**State**")
+			with button:
+				st.write("**Component**")
+
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("Resting")
+			with button:
+				st.button("Click Me", key="sc_b_1",disabled=True)
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("Hover")
+			with button:
+				st.button("Click Me", key="sc_b_2",disabled=True)
+			state,button,__ = st.columns((2,2,10))
+
+			with state:
+				st.write("Clicked")
+			with button:
+				st.button("Click Me", key="sc_b_3",disabled=True)
+
+
+
+			st.html("""<style>
+			.st-key-sc_b_1 button{
+				color: black !important;
+				border-radius: 1px;
+				# background-color: #11567F !important;
+				# border-color: #11567F !important;
+			}
+			.st-key-sc_b_2 button{
+				color: #11567F !important;
+				border-color: #11567F !important;
+				border-radius: 1px;
+				# background-color: #11567F !important;
+				# border-color: #11567F !important;
+			}
+			.st-key-sc_b_3 button{
+				background-color: #D4EFFF !important;
+				color: #11567F !important;
+				border-color: #11567F !important;
+				border-radius: 1px;
+				# background-color: #11567F !important;
+				# border-color: #11567F !important;
+			}
+			</style>""")
+
+			st.write("**Example**")
+
+			st.segmented_control("Example",["Comedy","Action","Thriller","Drama"],selection_mode="multi", default=["Action","Drama"], key="segcontrol_example")
+
+			st.html("""
+				<style>
+				.st-key-segcontrol_example button:hover {
+					color: #11567F;
+					border-color: #11567F;
+				}
+				.st-key-segcontrol_example button[kind*="Active"]{
+					background-color: #D4EFFF;
+					color: #11567F;
+					border-color: #11567F;
+				}
+				</style>
+				""")
+
+			with st.popover("Copy code"):
+				st.code('''
+					st.segmented_control("Example",["Comedy","Action","Thriller","Drama"],selection_mode="multi", default=["Action","Drama"], key="segcontrol_example")
+
+					st.html("""
+						<style>
+						.st-key-segcontrol_example button:hover {
+							color: #11567F;
+							border-color: #11567F;
+						}
+						.st-key-segcontrol_example button[kind*="Active"]{
+							background-color: #D4EFFF;
+							color: #11567F;
+							border-color: #11567F;
+						}
+						</style>
+						""")
+					''')

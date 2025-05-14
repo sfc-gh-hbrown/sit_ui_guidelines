@@ -1,7 +1,10 @@
 import streamlit as st
 
+from style.style import sit_style
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
+
+st.html(sit_style)
 
 st.html("""
 <style>
@@ -39,7 +42,6 @@ st.html("""
 </style>
 	""")
 
-st.title("SIT Design System")
 st.header("Typography")
 
 st.write("Streamlit apps have the font **Source Sans Pro** by default. However, fonts can be customized for Streamlit and other frameworks if needed.")

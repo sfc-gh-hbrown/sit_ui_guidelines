@@ -1,7 +1,11 @@
 import streamlit as st
 
 
-st.set_page_config(layout="wide")
+from style.style import sit_style
+
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
+
+st.html(sit_style)
 
 st.html("""
 <style>
@@ -19,6 +23,5 @@ st.html("""
 </style>
 	""")
 
-st.title("SIT Design System")
 
 st.header("Overview")

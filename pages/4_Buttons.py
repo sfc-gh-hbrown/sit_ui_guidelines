@@ -1,6 +1,10 @@
 import streamlit as st
 
-st.set_page_config(layout="wide")
+from style.style import sit_style
+
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
+
+st.html(sit_style)
 
 st.html("""
 <style>
@@ -18,7 +22,6 @@ st.html("""
 </style>
 	""")
 
-st.title("SIT Design System")
 
 st.header("Overview")
 
@@ -85,13 +88,13 @@ with st.container(key="styled_tabs"):
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Hover</p>""")
-		col2.button("Click me", key="p-hover")
+		col2.button("Click me", key="p-hover", disabled=True)
 		col3.html("""<p style="padding-top:7px">044064</p>""")
 		col4.html("""<p style="padding-top:7px">FFFFFF 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Clicked</p>""")
-		col2.button("Click me", key="p-clicked")
+		col2.button("Click me", key="p-clicked", disabled=True)
 		col3.html("""<p style="padding-top:7px">1B78AE</p>""")
 		col4.html("""<p style="padding-top:7px">FFFFFF 100%</p>""")
 
@@ -109,13 +112,13 @@ with st.container(key="styled_tabs"):
 		}
 
 		.st-key-p-hover button{
-			color: #FFFFFF;
-			background-color: #044064;
+			color: #FFFFFF !important;
+			background-color: #044064 !important;
 		}
 
 		.st-key-p-clicked button{
-			color: #FFFFFF;
-			background-color: #1B78AE;
+			color: #FFFFFF !important;
+			background-color: #1B78AE !important;
 		}
 		</style>
 		"""
@@ -186,37 +189,37 @@ with st.container(key="styled_tabs"):
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top: 7px">Resting</p>""")
-		col2.button("Click me", key="s-resting")
+		col2.button("Click me", key="s-resting", disabled=True)
 		col3.html("""<p style="padding-top:7px">11567F</p>""")
 		col4.html("""<p style="padding-top:7px">FFFFFF 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Hover</p>""")
-		col2.button("Click me", key="s-hover")
+		col2.button("Click me", key="s-hover", disabled=True)
 		col3.html("""<p style="padding-top:7px">02263B</p>""")
 		col4.html("""<p style="padding-top:7px">02263B 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Clicked</p>""")
-		col2.button("Click me", key="s-clicked")
+		col2.button("Click me", key="s-clicked", disabled=True)
 		col3.html("""<p style="padding-top:7px">1B78AE</p>""")
 		col4.html("""<p style="padding-top:7px">1B78AE 100%</p>""")
 
 		css = """
 		<style>
 		.st-key-s-resting button{
-			color: #11567F;
-			border-color: #11567F;
+			color: #11567F !important;
+			border-color: #11567F !important;
 		}
 
 		.st-key-s-hover button{
-			color: #02263B;
-			border-color: #02263B;
+			color: #02263B !important;
+			border-color: #02263B !important;
 		}
 
 		.st-key-s-clicked button{
-			color: #1B78AE;
-			border-color: #1B78AE;
+			color: #1B78AE !important;
+			border-color: #1B78AE !important;
 		}
 		</style>
 		"""
@@ -288,38 +291,38 @@ with st.container(key="styled_tabs"):
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top: 7px">Resting</p>""")
-		col2.button("Click me", key="t-resting")
+		col2.button("Click me", key="t-resting", disabled=True)
 		col3.html("""<p style="padding-top:7px">BFC5D3</p>""")
 		col4.html("""<p style="padding-top:7px">262730 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Hover</p>""")
-		col2.button("Click me", key="t-hover")
+		col2.button("Click me", key="t-hover", disabled=True)
 		col3.html("""<p style="padding-top:7px">808495</p>""")
-		col4.html("""<p style="padding-top:7px">FFFFFF 100%</p>""")
+		col4.html("""<p style="padding-top:7px">262730 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Clicked</p>""")
-		col2.button("Click me", key="t-clicked")
+		col2.button("Click me", key="t-clicked", disabled=True)
 		col3.html("""<p style="padding-top:7px">262730</p>""")
-		col4.html("""<p style="padding-top:7px">FFFFFF 100%</p>""")
+		col4.html("""<p style="padding-top:7px">262730 100%</p>""")
 
 		css = """
 		<style>
 		.st-key-t-resting button{
-			color: #262730;
-			border-color: #BFC5D3;
+			color: #262730 !important;
+			border-color: #BFC5D3 !important;
 		}
 
 		.st-key-t-hover button{
-			color: #262730;
-			border-color: #808495;
+			color: #262730 !important;
+			border-color: #808495 !important;
 		}
 
 		.st-key-t-clicked button{
-			color: #262730;
-			border-color: #262730;
-			background-color:transparent;
+			color: #262730 !important;
+			border-color: #262730 !important;
+			background-color:transparent !important;
 		}
 		</style>
 		"""
@@ -390,38 +393,38 @@ with st.container(key="styled_tabs"):
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top: 7px">Resting</p>""")
-		col2.button("Click me", key="d-resting")
+		col2.button("Click me", key="d-resting", disabled=True)
 		col3.html("""<p style="padding-top:7px">FF2B2B</p>""")
 		col4.html("""<p style="padding-top:7px">FF2B2B 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Hover</p>""")
-		col2.button("Click me", key="d-hover")
+		col2.button("Click me", key="d-hover", disabled=True)
 		col3.html("""<p style="padding-top:7px">7D353B</p>""")
 		col4.html("""<p style="padding-top:7px">7D353B 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Clicked</p>""")
-		col2.button("Click me", key="d-clicked")
+		col2.button("Click me", key="d-clicked", disabled=True)
 		col3.html("""<p style="padding-top:7px">FF8C8C</p>""")
 		col4.html("""<p style="padding-top:7px">FF8C8C 100%</p>""")
 
 		css = """
 		<style>
 		.st-key-d-resting button{
-			color: #FF2B2B;
-			border-color: #FF2B2B;
+			color: #FF2B2B !important;
+			border-color: #FF2B2B !important;
 		}
 
 		.st-key-d-hover button{
-			color: #7D353B;
-			border-color: #7D353B;
+			color: #7D353B !important;
+			border-color: #7D353B !important;
 		}
 
 		.st-key-d-clicked button{
-			color: #FF8C8C;
-			border-color: #FF8C8C;
-			background-color:transparent;
+			color: #FF8C8C !important;
+			border-color: #FF8C8C !important;
+			background-color:transparent !important;
 		}
 		</style>
 		"""
