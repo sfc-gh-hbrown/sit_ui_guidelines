@@ -21,10 +21,11 @@ st.html("""
 </style>
 	""")
 
+
 st.header("Overview")
 
-st.write("Welcome to the SIT Design Guidelines! This documentation is intended for anyone at Snowflake working on user interfaces with Streamlit, React, or other frameworks.")
 
-st.write("Here you will find guidance on how to use UI components, user experience and user interface best practices, links to design and icon libraries, and how to request help from the SIT Design Team.")
-
+st.write("Welcome to the Solution Innovation Team Design Guidelines!")
+st.write("This documentation is intended for anyone at Snowflake working on user interfaces with Streamlit.")
+st.write("This tool provides ready-to-use code snippets, style guidelines, and reusable components to ensure a consistent look and feel that aligns with SIT’s design standards.")
 st.info("Feel free to reach out to the Slack channel #sit-design-requests with any feedback or design requests you have.")
