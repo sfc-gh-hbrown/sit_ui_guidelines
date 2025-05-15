@@ -180,7 +180,7 @@ with st.container(key="styled_tabs"):
 		""")''')
 
 	with tab2:
-		st.write("**Primary Buttons:** For the most important action on the page or section. Use only once per screen. Can be paired with secondary buttons when there are multipe calls to action in the same section.")
+		st.write("**Secondary Buttons:** For secondary actions that need attention but are less important than primary. Can be used multiple times per screen or section.")
 		col1,col2,col3,col4 = st.columns(4)
 		col1.write("**State**")
 		col2.write("**Button**")
@@ -191,7 +191,7 @@ with st.container(key="styled_tabs"):
 		col1.html("""<p style="padding-top: 7px">Resting</p>""")
 		col2.button("Click me", key="s-resting", disabled=True)
 		col3.html("""<p style="padding-top:7px">11567F</p>""")
-		col4.html("""<p style="padding-top:7px">FFFFFF 100%</p>""")
+		col4.html("""<p style="padding-top:7px">11567F 100%</p>""")
 
 		col1,col2,col3,col4 = st.columns(4)
 		col1.html("""<p style="padding-top:7px">Hover</p>""")
@@ -282,7 +282,7 @@ with st.container(key="styled_tabs"):
 
 
 	with tab3:
-		st.write("**Primary Buttons:** For the most important action on the page or section. Use only once per screen. Can be paired with secondary buttons when there are multipe calls to action in the same section.")
+		st.write("**Tertiary Buttons:** For low emphasis actions. Can be paired with primary and/or secondary button to signify an action of less importance.")
 		col1,col2,col3,col4 = st.columns(4)
 		col1.write("**State**")
 		col2.write("**Button**")
@@ -384,7 +384,7 @@ with st.container(key="styled_tabs"):
 		""")''')
 
 	with tab4:
-		st.write("**Primary Buttons:** For the most important action on the page or section. Use only once per screen. Can be paired with secondary buttons when there are multipe calls to action in the same section.")
+		st.write("**Destructive Buttons:** For actions that permanently delete or significantly alter data.")
 		col1,col2,col3,col4 = st.columns(4)
 		col1.write("**State**")
 		col2.write("**Button**")
